@@ -1,0 +1,272 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* --------------------------------- */
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Furgatorio';
+    src: url('fonts/Furgatorio.woff2') format('woff2'),
+         url('fonts/Furgatorio.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Furgatorio Titling';
+    src: url('fonts/Furgatorio_Titling.woff2') format('woff2'),
+         url('fonts/Furgatorio_Titling.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ROOT VARIABLES */
+:root {
+    --mainBg: #000000;
+    --accentColor: #00674F;
+    --fontColor: #fff;
+    --mainFont: "Playfair Display", serif;
+    --secondaryFont: 'Furgatorio', 'Times New Roman', serif;
+    --thirdFont: 'Furgatorio Titling', Arial, sans-serif;
+}
+
+/* ----- SKIP LINK ----- */
+#skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: var(--accentColor);
+    color: var(--fontColor);
+    padding: 0.5em;
+}
+
+/* GLOBAL STYLES */
+body {
+    background-color: var(--mainBg);
+    font-family: var(--mainFont);
+    color: var(--fontColor);
+}
+
+h1 {
+    font-family: var(--secondaryFont);
+}
+
+a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+}
+
+header img {
+    width: 50%;
+}
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    position: relative;
+}
+
+
+
+#navToggle {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--fontColor);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    z-index: 10; 
+}
+
+
+nav ul {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--mainBg);
+        position: absolute;
+        top: 100%;
+        right: 5em;
+        width: 40%;
+        padding: 1em 0;
+        gap: 1em;
+    }
+
+    nav ul.open {
+        display: flex; 
+        top: 3em;
+    }
+
+    nav ul li {
+        padding: .5em 0;
+        width: 100%;
+        text-align: center;
+        border: 3px solid var(--fontColor);
+        font-size: 18px;
+    }
+
+    nav ul li:hover {
+        border: 4px solid var(--accentColor); 
+    }
+
+    nav ul li a:hover {
+        color: var(--accentColor);
+    }
+
+/* HERO SECTION */
+
+main {
+    width: 100%;
+    height: auto;
+    margin-top: 4em;
+}
+
+section#hero {
+    width: 100%;
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+    border-top: 3px solid var(--accentColor);
+    border-bottom: 3px solid var(--accentColor);
+    padding-top: .3em;
+    padding-bottom: .3em;
+    
+}
+
+/* RESPONSIVE STYLES */
+
+
+    @media (min-width: 1024px) {
+
+        header img {
+            width: 25%;
+        }
+        
+        nav {
+            margin-top: 1em;
+        }
+
+        nav ul {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+            list-style: none;
+            transition: all 0.3s ease;
+            right: 0;
+        }
+
+        ul#navLinks li {
+            border: none;
+        }
+
+        nav ul li a {
+            color: var(--fontColor);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+        }
+
+        nav ul li a:hover {
+        border-bottom: 4px solid var(--accentColor);
+        }
+
+        #navToggle {
+            display: none;
+        }
+
+
+        nav ul {
+            background-color: var(--mainBg);
+            text-align: center;
+            width: 100%;
+            gap: 2em;
+        }
+    
+        nav ul.open {
+            display: flex; 
+            top: 3em;
+        }
+    
+        nav ul li {
+            text-align: center;
+            border: 3px solid var(--fontColor);
+            font-size: 18px;
+            width: 15%;
+        }
+    }
