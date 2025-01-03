@@ -1,3 +1,5 @@
+/* Wrtten by Shelby Lynn Apodaca @ https://touchofafeather.com */
+
 /* CSS RESET */
 
 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 */
@@ -103,7 +105,14 @@ body {
 }
 
 h1 {
-    font-family: var(--secondaryFont);
+    font-family: var(--mainFont);
+    font-size: 48px;
+    padding: .7em 0;
+}
+
+h2 {
+    font-family: var(--mainFont);
+    font-size: 24px;
 }
 
 a {
@@ -133,7 +142,6 @@ nav {
 }
 
 
-
 #navToggle {
     display: block;
     width: 100%;
@@ -145,55 +153,55 @@ nav {
     cursor: pointer;
     position: absolute;
     top: 1em;
-    right: 1em;
+    right: 0;
     z-index: 10; 
 }
 
-
 nav ul {
-        display: none; 
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--mainBg);
-        position: absolute;
-        top: 100%;
-        right: 5em;
-        width: 40%;
-        padding: 1em 0;
-        gap: 1em;
-    }
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--mainBg);
+    position: absolute;
+    right: 1em;
+    width: 50%;
+    padding: 1em 0;
+    gap: 1em;
+}
 
-    nav ul.open {
-        display: flex; 
-        top: 3em;
-    }
+nav ul.open {
+    display: flex; 
+    top: 3.5em;
+    z-index: 100; /* Ensure the menu is above other content */
+}
 
-    nav ul li {
-        padding: .5em 0;
-        width: 100%;
-        text-align: center;
-        border: 3px solid var(--fontColor);
-        font-size: 18px;
-    }
+nav ul li {
+    padding: .5em 0;
+    width: 95%;
+    text-align: center;
+    border: 2px solid var(--fontColor);
+    font-size: 18px;
+}
 
-    nav ul li:hover {
-        border: 4px solid var(--accentColor); 
-    }
+nav ul li:hover {
+    border: 2px solid var(--accentColor); 
+}
 
-    nav ul li a:hover {
-        color: var(--accentColor);
-    }
+nav ul li a:hover {
+    color: var(--accentColor);
+}
 
 /* HERO SECTION */
-
 main {
     width: 100%;
     height: auto;
     margin-top: 4em;
+    order: 1;
 }
 
-section#hero {
-    width: 100%;
+#hero {
+    position: relative;
+    text-align: center;
 }
 
 #hero img {
@@ -201,9 +209,97 @@ section#hero {
     height: auto;
     border-top: 3px solid var(--accentColor);
     border-bottom: 3px solid var(--accentColor);
-    padding-top: .3em;
-    padding-bottom: .3em;
-    
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+#heroText {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: var(--fontColor);
+}
+
+/* SERVICES SECTION */
+
+#allServices {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+
+.service {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.serviceImg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.serviceImg img {
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    display: block;
+    padding: .5em;
+    border: 2px solid var(--fontColor);
+}
+
+.serviceImg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+    padding: .5em;
+}
+
+.service h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    color: var(--fontColor);
+    font-size: 36px;
+    text-align: center;
+    padding: 0.5em;
+    width: 100%;
+    font-family: var(--thirdFont);
+    letter-spacing: .1em;
+}
+
+.service article {
+    width: 50%;
+    padding: 2em 0 1em 0;
+}
+
+.service article p {
+    font-size: 16px;
+    line-height: 2em;
+    text-align: center;
 }
 
 /* RESPONSIVE STYLES */
