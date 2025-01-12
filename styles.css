@@ -386,7 +386,6 @@ main {
     font-family: var(--mainFont);
     letter-spacing: .1em;
     padding: 1em 0;
-    border-bottom: 3px solid var(--accentColor;)
 }
 
 #flex-container {
@@ -460,6 +459,27 @@ main {
 
 .review-img img { 
     padding-bottom: .5em;
+}
+
+/* FOOTER  */
+
+footer {
+    width: 100%;
+    height: auto;
+    line-height: 2em;
+    text-align: center;
+    border-top: 2px solid var(--accentColor);
+    padding: 1em 0;
+}
+
+footer a {
+    font-family: var(--secondaryFont);
+    font-size: 36px;
+    letter-spacing: .1em;
+}
+
+footer a:hover {
+    color: var(--accentColor);
 }
 
 
