@@ -28,13 +28,17 @@
                 <li><a href="#allServices">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#review-title">Reviews</a></li>
             </ul>
         </nav>
     </header>
 
-    <button id="backToTop" title="Go to top">↑</button>
+    
 
     <main>
+
+        <button id="backToTop" title="Go to top">↑</button>
+
         <section id="hero">
             <img src="images/hero.png" alt="mechanic working on the engine of an automobile">
             <div id="heroText">
@@ -203,6 +207,25 @@
           navLinks.classList.toggle('open')
         })
     </script>
+
+<script>
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'block'; // Show button
+        } else {
+            backToTop.style.display = 'none'; // Hide button
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
     
   </body>
 </html>
